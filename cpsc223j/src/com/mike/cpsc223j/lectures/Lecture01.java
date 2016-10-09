@@ -19,7 +19,7 @@ public class Lecture01 {
 		//String temp = s.nextLine(); // accounts for \n
 		System.out.print("What is my name? ");
 		myName = s.nextLine();
-		String temp = s.nextLine(); // accounts for \n
+		s.nextLine(); // accounts for \n
 		System.out.print("What is your name? ");
 		yourName = s.nextLine();
 		

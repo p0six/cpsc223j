@@ -32,20 +32,20 @@ public class Lecture03 {
 		if (aName.equals(yourName)) {} 
 		read.close();
 		// String length
-		int len = aName.length();
+		//int len = aName.length();
 		
 		// Read a sentence.. find the number of upper case letters, and # of words.
 		// I/O -  Enter a sentence i.e. Enter a sentence: Today Is Thursday,
 		// num of uppercase is 3, num of words is 3. to count words, we count spaces + 1.
-		int Uc=0, Wc=0;
+		//int Uc=0, Wc=0;
 		// char c; duplicate var c
 		String st;
 		System.out.print("Enter a sentence: ");;
 		st=read.nextLine();
 		for (int i=0; i< st.length(); ++i) {
 			c = st.charAt(i);
-			if (Character.isUpperCase(c)) Uc++;
-			if (Character.isWhitespace(c)) Wc++;
+			//if (Character.isUpperCase(c)) Uc++;
+			//if (Character.isWhitespace(c)) Wc++;
 		}
 		// Generating random numbers
 		// import java.lang.*;
