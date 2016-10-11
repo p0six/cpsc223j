@@ -3,7 +3,7 @@ package com.mike.cpsc223j.project6;
 import java.util.Scanner;
 
 /*
- * Name			Michael Romero, Anette Ulrichsen
+ * Name			Michael Romero
  * Project No.	No.6 part I
  * Due Date		Oct 13, 2016
  * Professor	Ray Ahmadnia

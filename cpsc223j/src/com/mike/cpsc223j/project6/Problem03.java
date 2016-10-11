@@ -1,5 +1,14 @@
 package com.mike.cpsc223j.project6;
 
+/*
+ * Name			Michael Romero
+ * Project No.	No.6 part 3
+ * Due Date		Oct 13, 2016
+ * Professor	Ray Ahmadnia
+ * 
+ * Purpose:		This program demonstrates using an ordered queue linked list.
+ */
+
 public class Problem03 {
 	public static void main(String[] args) {
 		LinkedList q = new LinkedList();

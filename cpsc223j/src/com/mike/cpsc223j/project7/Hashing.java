@@ -1,5 +1,14 @@
 package com.mike.cpsc223j.project7;
 
+/*
+ * Name			Michael Romero
+ * Project No.	No.7
+ * Due Date		Oct 13, 2016
+ * Professor	Ray Ahmadnia
+ * 
+ * Purpose:		This is a Hashing class which is used in Problem01 and Problem02.
+ */
+
 public class Hashing {
 	nodeAccount[] h = new nodeAccount[5];
 	public Hashing() {
@@ -41,9 +50,5 @@ public class Hashing {
 			}
 		}
 		return null;
-	}
-	
-	public static void main(String[] args) { // this needs to populate hash table
-		
 	}
 }

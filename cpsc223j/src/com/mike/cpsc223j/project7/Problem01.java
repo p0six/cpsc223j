@@ -2,6 +2,15 @@ package com.mike.cpsc223j.project7;
 
 import java.util.Scanner;
 
+/*
+ * Name			Michael Romero
+ * Project No.	No.7 part I
+ * Due Date		Oct 13, 2016
+ * Professor	Ray Ahmadnia
+ * 
+ * Purpose:		This program will find the union of two sets of integers.
+ */
+
 public class Problem01 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);

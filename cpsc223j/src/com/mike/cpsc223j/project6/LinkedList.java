@@ -1,5 +1,14 @@
 package com.mike.cpsc223j.project6;
 
+/*
+ * Name			Michael Romero
+ * Project No.	No.6
+ * Due Date		Oct 13, 2016
+ * Professor	Ray Ahmadnia
+ * 
+ * Purpose:		This is a LinkedList class with queues, stacks, and ordered queues.
+ */
+
 public class LinkedList {
 	node stack, queue, ordered;
 	LinkedList() {

@@ -4,6 +4,14 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+/*
+ * Name			Michael Romero
+ * Project No.	No.7 part 2
+ * Due Date		Oct 13, 2016
+ * Professor	Ray Ahmadnia
+ * 
+ * Purpose:		This program demonstrates Hashing for more efficient searches.
+ */
 
 public class Problem02 {
 	public static void main(String[] args) {

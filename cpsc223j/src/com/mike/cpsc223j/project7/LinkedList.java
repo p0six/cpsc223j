@@ -1,5 +1,14 @@
 package com.mike.cpsc223j.project7;
 
+/*
+ * Name			Michael Romero
+ * Project No.	No.7
+ * Due Date		Oct 13, 2016
+ * Professor	Ray Ahmadnia
+ * 
+ * Purpose:		This is a LinkedList class which is used in Project 7.
+ */
+
 public class LinkedList {
 	node stack, queue, ordered;
 	LinkedList() {
