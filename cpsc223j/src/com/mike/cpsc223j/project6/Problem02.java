@@ -38,8 +38,7 @@ public class Problem02 {
 				if (ln.next != null && rn.next != null) {
 					System.out.print(" + ");
 				}
-				ln = ln.next;
-				rn = rn.next;
+				ln = ln.next; rn = rn.next;
 			}
 				
 			System.out.print("\n\tEnter the X value: ");
@@ -48,8 +47,7 @@ public class Problem02 {
 		    ln = l.queue; rn = r.queue;
 		    while (ln != null && rn != null) {
 		    	sum += ln.info * Math.pow(x, rn.info);
-		    	ln = ln.next;
-		    	rn = rn.next;
+		    	ln = ln.next; rn = rn.next;
 		    }
 			System.out.print(sum);
 		}
