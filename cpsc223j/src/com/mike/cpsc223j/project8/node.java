@@ -9,7 +9,7 @@ package com.mike.cpsc223j.project8;
  * Purpose:		This is a node class used by our Problem02.
  */
 
-public class node {
+public class node { 
 		int info; 
 		String name;
 		float balance;

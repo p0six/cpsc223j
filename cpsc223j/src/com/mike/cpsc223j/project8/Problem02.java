@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /*
  * Name			Michael Romero
- * Project No.	No.8 part 1
+ * Project No.	No.8 part I
  * Due Date		Oct 20, 2016
  * Professor	Ray Ahmadnia
  * 

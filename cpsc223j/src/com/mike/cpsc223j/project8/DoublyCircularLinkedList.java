@@ -48,7 +48,7 @@ public class DoublyCircularLinkedList {
 			head.next = p;
 			p.back = head;
 			p.next = tail;
-			tail.back = p;
+			tail.back = p; 
 			head = p;
 		}		
 	}

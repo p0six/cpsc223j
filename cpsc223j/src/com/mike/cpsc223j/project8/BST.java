@@ -10,7 +10,7 @@ package com.mike.cpsc223j.project8;
  * 				Problem02, which uses integers for search key.
  */
 
-public class BST {
+public class BST { 
 	node root;
 	public BST() { 
 		root = null; 

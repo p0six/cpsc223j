@@ -5,7 +5,7 @@ package com.mike.cpsc223j.project8;
  * Project No.	No.8 part 1
  * Due Date		Oct 20, 2016
  * Professor	Ray Ahmadnia
- * 
+ *  
  * Purpose:		This is the BST node class used for the solution to Problem01.
  */
 
