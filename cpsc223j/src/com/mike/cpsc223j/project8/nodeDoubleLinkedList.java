@@ -9,7 +9,7 @@ package com.mike.cpsc223j.project8;
  * Purpose:		This is a doubly linked node class used by Problem03.
  */
 
-public class nodeDoubleLinkedList { //from Lecture10
+public class nodeDoubleLinkedList { // from Lecture10
 	String info;
 	nodeDoubleLinkedList next;
 	nodeDoubleLinkedList back;

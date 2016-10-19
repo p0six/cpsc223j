@@ -5,4 +5,4 @@
 20	Ronald_Reagan	999.25
 90	George_Bush	793.22
 30	Jerald_Ford	222.44
-10	Richard_Nixon	777.77 
+10	Richard_Nixon	777.77
