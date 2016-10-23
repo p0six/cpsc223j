@@ -5,7 +5,7 @@ import javax.swing.*;
 
 /*
  * Name			Michael Romero
- * Project No.	No.9 part 1
+ * Project No.	No.9 part I
  * Due Date		Oct 27, 2016
  * Professor	Ray Ahmadnia
  * 

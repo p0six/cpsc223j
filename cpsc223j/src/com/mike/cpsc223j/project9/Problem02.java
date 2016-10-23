@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /*
  * Name			Michael Romero
- * Project No.	No.9 part 2
+ * Project No.	No.9 part II
  * Due Date		Oct 27, 2016
  * Professor	Ray Ahmadnia
  * 
