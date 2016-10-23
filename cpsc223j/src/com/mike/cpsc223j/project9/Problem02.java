@@ -47,6 +47,7 @@ public class Problem02 {
 			
 		} while (option.equals("y"));
 	}
+	
 	static void displayMenu(Graphics g) {
 		g.drawString("---------------MENU---------------", 50, 50);
 		g.drawString("a. Compute the area of triangles ", 50, 70);
@@ -85,7 +86,7 @@ public class Problem02 {
 		h = Integer.parseInt(temp);
 		
 		double area = Math.round(Math.PI*(w*h/2)) / 100.0;
-		String outputString = "Area of Polygon = " + area;
+		String outputString = "Area of Ellipse = " + area;
 		int stringStart = centerX - fm.stringWidth(outputString)/2;
 		g.drawString(outputString, stringStart, 20);
 		
