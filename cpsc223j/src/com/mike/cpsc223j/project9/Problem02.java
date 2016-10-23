@@ -56,21 +56,32 @@ public class Problem02 {
 	}
 	
 	static void computeAreaOfTriangle(Graphics g, JFrame frame) {
-		int centerX = frame.getWidth()/2;
-		int x, y;
-		String temp = JOptionPane.showInputDialog("What is the width of the base? ");
-		x = Integer.parseInt(temp);
-		temp = JOptionPane.showInputDialog("What is the height? ");
-		y = Integer.parseInt(temp);
-				
+		int centerX = frame.getWidth()/2, width, height;
 		FontMetrics fm = g.getFontMetrics();
-		double area = 0.5*x*y;
-		String outputString = "Area of Triangle = " + area;
+		String outputString = "Please enter triangle info";
 		int stringStart = centerX - fm.stringWidth(outputString)/2;
 		g.drawString(outputString, stringStart, 20);
+
+		String temp = JOptionPane.showInputDialog("What is the width of the base? ");
+		width = Integer.parseInt(temp);
+		temp = JOptionPane.showInputDialog("What is the height? ");
+		height = Integer.parseInt(temp);
 		
-		int[] xv = {centerX, centerX - x/2, centerX + x/2};
-		int[] yv = {92, 92 + y, 92 + y};
+		outputString = "Base Width = " + width;
+		stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 92 + height + 30);
+		
+		outputString = "Height = " + height;
+		stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 92 + height + 45);
+		
+		double area = 0.5*width*height;
+		outputString = "Area = .05*width*height = " + area;
+		stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 92 + height + 60);
+		
+		int[] xv = {centerX, centerX - width/2, centerX + width/2};
+		int[] yv = {92, 92 + height, 92 + height};
 		Color z = g.getColor();
 		g.setColor(Color.blue);
 		g.drawPolygon(xv,yv, xv.length);
@@ -78,24 +89,43 @@ public class Problem02 {
 	}
 	
 	static void computeAreaOfEllipse(Graphics g, JFrame frame) {		
-		int centerX = frame.getWidth()/2, w, h;
+		int centerX = frame.getWidth()/2, major, minor;
 		FontMetrics fm = g.getFontMetrics();
-		String temp = JOptionPane.showInputDialog("What is the length of the major axis? "); // long diameter
-		w = Integer.parseInt(temp);
-		temp = JOptionPane.showInputDialog("What is the length of the minor axis? "); // short diameter
-		h = Integer.parseInt(temp);
 		
-		double area = Math.round(Math.PI*(w*h/2)) / 100.0;
-		String outputString = "Area of Ellipse = " + area;
+		String outputString = "Please enter ellipse info";
 		int stringStart = centerX - fm.stringWidth(outputString)/2;
 		g.drawString(outputString, stringStart, 20);
 		
-		g.drawOval(centerX - w/2, 92, w, h);		
+		String temp = JOptionPane.showInputDialog("What is the length of the major axis? "); // long diameter
+		major = Integer.parseInt(temp);
+		temp = JOptionPane.showInputDialog("What is the length of the minor axis? "); // short diameter
+		minor = Integer.parseInt(temp);
+		
+		g.drawOval(centerX - major/2, 52, major, minor);
+		
+		outputString = "Major axis = " + major;
+		stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 52 + minor + 30);
+		
+		outputString = "Minor axis = " + minor;
+		stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 52 + minor + 45);
+		
+		double area = Math.round(100*Math.PI*(major/2)*(minor/2)) / 100.0;
+		outputString = "Area = pi*(major/2)*(minor/2) = " + area;
+		stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 52 + minor + 60);
+		
 	}
 	
 	static void computeAreaOfPolygon(Graphics g, JFrame frame) {
-		int centerX = frame.getWidth()/2;
-		int b1, b2, h;
+		int centerX = frame.getWidth()/2, b1, b2, h;
+		FontMetrics fm = g.getFontMetrics();
+		
+		String outputString = "Please enter polygon info";
+		int stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 20);
+		
 		String temp = JOptionPane.showInputDialog("What is the width of the top? ");
 		b1 = Integer.parseInt(temp);
 		temp = JOptionPane.showInputDialog("What is the width of the bottom? ");
@@ -103,14 +133,25 @@ public class Problem02 {
 		temp = JOptionPane.showInputDialog("What is the height value? ");
 		h = Integer.parseInt(temp);
 		
-		FontMetrics fm = g.getFontMetrics();
-		double area = 0.5*h*(b1 + b2);
-		String outputString = "Area of Polygon = " + area;
-		int stringStart = centerX - fm.stringWidth(outputString)/2;
-		g.drawString(outputString, stringStart, 20);
-		
 		int[] xr = {centerX - b1/2, centerX + b1/2, centerX + b2/2, centerX - b2/2};
 		int[] yr = {92, 92, 92 + h, 92 + h};
 		g.drawPolygon(xr, yr, 4);
+		
+		outputString = "Width at top = " + b1;
+		stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 92 + h + 30);
+				
+		outputString = "Width at bottom = " + b2;
+		stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 92 + h + 45);
+		
+		outputString = "Height = " + h;
+		stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 92 + h + 60);
+		
+		double area = 0.5*h*(b1 + b2);
+		outputString = "Area = 0.5*height*(topWidth + botWiddth) = " + area;
+		stringStart = centerX - fm.stringWidth(outputString)/2;
+		g.drawString(outputString, stringStart, 92 + h + 75);
 	}	
 }
