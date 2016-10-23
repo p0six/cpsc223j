@@ -83,8 +83,8 @@ public class Problem02 {
 		int[] xv = {centerX, centerX - width/2, centerX + width/2};
 		int[] yv = {92, 92 + height, 92 + height};
 		Color z = g.getColor();
-		g.setColor(Color.blue);
-		g.drawPolygon(xv,yv, xv.length);
+		g.setColor(Color.lightGray);
+		g.fillPolygon(xv,yv, xv.length);
 		g.setColor(z);
 	}
 	
@@ -101,7 +101,10 @@ public class Problem02 {
 		temp = JOptionPane.showInputDialog("What is the length of the minor axis? "); // short diameter
 		minor = Integer.parseInt(temp);
 		
-		g.drawOval(centerX - major/2, 52, major, minor);
+		Color z = g.getColor();
+		g.setColor(Color.lightGray);
+		g.fillOval(centerX - major/2, 52, major, minor);
+		g.setColor(z);
 		
 		outputString = "Major axis = " + major;
 		stringStart = centerX - fm.stringWidth(outputString)/2;
@@ -135,7 +138,11 @@ public class Problem02 {
 		
 		int[] xr = {centerX - b1/2, centerX + b1/2, centerX + b2/2, centerX - b2/2};
 		int[] yr = {92, 92, 92 + h, 92 + h};
-		g.drawPolygon(xr, yr, 4);
+
+		Color z = g.getColor();
+		g.setColor(Color.lightGray);
+		g.fillPolygon(xr, yr, 4);
+		g.setColor(z);
 		
 		outputString = "Width at top = " + b1;
 		stringStart = centerX - fm.stringWidth(outputString)/2;
