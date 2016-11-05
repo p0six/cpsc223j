@@ -143,7 +143,7 @@ public class ChipTicketsAgency extends Applet implements ActionListener, Adjustm
 			tconfirm.append("Dept City: " + depart.getSelectedItem() + "\n");
 			tconfirm.append("Arrival city: " + arrive.getSelectedItem() + "\n");
 			tconfirm.append("No. of Tickets: " + ttix.getText() + "\n");
-			tconfirm.append("Tickets tuype: " + cbgtix.getSelectedCheckbox().getLabel() + "\n\n");
+			tconfirm.append("Tickets type: " + cbgtix.getSelectedCheckbox().getLabel() + "\n\n");
 		}
 	}
 
