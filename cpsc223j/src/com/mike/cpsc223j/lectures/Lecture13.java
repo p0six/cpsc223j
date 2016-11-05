@@ -84,7 +84,7 @@ public class Lecture13 extends Applet implements ActionListener, AdjustmentListe
 	public void itemStateChanged(ItemEvent e) {
 		// TODO Auto-generated method stub
 		String itm = ch.getSelectedItem();
-		
+		itm.equals(itm);
 		// to remove a selection from the list.. 
 		int n = ch.getSelectedIndex();
 		ch.remove(n);
