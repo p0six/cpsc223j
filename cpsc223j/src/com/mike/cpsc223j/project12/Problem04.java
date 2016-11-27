@@ -1,5 +1,15 @@
 package com.mike.cpsc223j.project12;
 
+/*
+ * Name			Michael Romero
+ * Project No.	No.12 part 4
+ * Due Date		Dec 1, 2016
+ * Professor	Ray Ahmadnia
+ * 
+ * Purpose:		This Applet is an image browser that allows users to change the 
+ * 				image size with a scrollbar via the AdjustmentListener
+ */
+
 import java.applet.Applet;
 import java.awt.Button;
 import java.awt.Graphics;
@@ -11,18 +21,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
-
 import javax.swing.ImageIcon;
-
-/*
- * Name			Michael Romero
- * Project No.	No.12 part 4
- * Due Date		Dec 1, 2016
- * Professor	Ray Ahmadnia
- * 
- * Purpose:		This Applet is an image browser that allows users to change the 
- * 				image size with a scrollbar via the AdjustmentListener
- */
 
 public class Problem04 extends Applet implements ActionListener, AdjustmentListener {
 	private static final long serialVersionUID = 1L;
