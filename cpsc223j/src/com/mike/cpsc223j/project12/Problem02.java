@@ -1,5 +1,15 @@
 package com.mike.cpsc223j.project12;
 
+/*
+ * Name			Michael Romero
+ * Project No.	No.12 part 2
+ * Due Date		Dec 1, 2016
+ * Professor	Ray Ahmadnia
+ * 
+ * Purpose:		This Applet is an exam application that tests users addition skills.
+ * 
+ */
+
 import java.applet.Applet;
 import java.awt.Button;
 import java.awt.Checkbox;
@@ -13,16 +23,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
 import javax.swing.ImageIcon;
-
-/*
- * Name			Michael Romero
- * Project No.	No.12 part 2
- * Due Date		Dec 1, 2016
- * Professor	Ray Ahmadnia
- * 
- * Purpose:		This Applet is an exam application that tests users addition skills.
- * 
- */
 
 public class Problem02 extends Applet implements ActionListener {
 	private static final long serialVersionUID = 1L;
@@ -62,10 +62,9 @@ public class Problem02 extends Applet implements ActionListener {
 		setSize(600,400);		
 		
 		// Let's load our CSUF Image
-		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("com//mike//cpsc223j//project12//csuf.jpg"));
-		imgschool = icon.getImage();
+		imgschool = new ImageIcon(getClass().getResource("csuf.jpg")).getImage();
 		
-		 // x, y, width, height
+		 // setBounds(x, y, width, height), and add
 		lpracticingAddition.setBounds(240,10,140,20); add(lpracticingAddition);
 		ltodaysDate.setBounds(10, 30, 180, 20); add(ltodaysDate);
 		lselectNumQuestions.setBounds(10, 60, 200, 20); add(lselectNumQuestions);
@@ -91,47 +90,55 @@ public class Problem02 extends Applet implements ActionListener {
 		// some game logic
 		if (e.getSource() == bstart) {	
 			c = Calendar.getInstance();
-			startTime = c.getTimeInMillis()/1000;	
+			startTime = c.getTimeInMillis()/1000; // current time in seconds at the start of quiz
 			numCorrect = 0; numWrong = 0;
 			tareport.setText(null); tamessage.setText(null);
 			questionNumber = 1; // initialized earlier to 0
 			lquestionNo.setText("Question No. " + questionNumber);
 			
+			// did they select 5 or 10 questions?
 			if (cbfive.getState()) {
-				numQuestions = 5; // initialized earlier to 0
+				numQuestions = 5; // initialized earlier to 0, this also affects conditional in else
 			} else {
-				numQuestions = 10; // initialized earlier to 0
+				numQuestions = 10; // initialized earlier to 0, this also affects conditional in else
 			}
+			
+			// first math problem
 			lmathProb.setText(x + " + " + y + " = ?");
+			
+			// give the text-field focus
+			tfresult.requestFocus();
 		} else { 
-			if (numQuestions > 0 && (numWrong + numCorrect) != numQuestions) {	
-				// x and y set to random digits above..
+			if (numQuestions > 0 && (numWrong + numCorrect) != numQuestions) {
+				// avoiding a parseInt() exception for null string
 				if (tfresult.getText().equals("")) {
 					z = 0;
 				} else {
 					z = Integer.parseInt(tfresult.getText());
 				}
 				
+				// clear the text-field, give it focus in prep for next question
 				tfresult.setText(null); tfresult.requestFocus();
+				
+				// x and y set to random digits above.
 				if ((x + y) == z) {
 					numCorrect++;
-					// Display a label that says "CORRECT"
+					// Update label to say "CORRECT", and a smiley face
 					lresult.setText("CORRECT");
-					// Display a smiley face
-					ImageIcon iconf = new ImageIcon(getClass().getClassLoader().getResource("com//mike//cpsc223j//project12//happyface.png"));
-					imgface = iconf.getImage(); repaint();
+					imgface = new ImageIcon(getClass().getResource("happyface.png")).getImage(); 
+					repaint();
 				} else {
 					numWrong++;
-					// Display a label that says "WRONG"
+					// Update label to say "WRONG", and an angry face
 					lresult.setText("WRONG");
-					// Display an angry face
-					ImageIcon iconf = new ImageIcon(getClass().getClassLoader().getResource("com//mike//cpsc223j//project12//angryface.png"));
-					imgface = iconf.getImage(); repaint();
+					imgface = new ImageIcon(getClass().getResource("angryface.png")).getImage();
+					repaint();
 				}			
 				
-				if ((numCorrect + numWrong) == numQuestions) {
+				// control whether to print a question, or compute results.
+				if ((numCorrect + numWrong) == numQuestions) { // exam is over.. print out results
 					c = Calendar.getInstance();
-					finishTime = c.getTimeInMillis()/1000;
+					finishTime = c.getTimeInMillis()/1000; // time in seconds at the end of quiz
 					lmathProb.setText("");
 					tareport.setText("Duration: " + (finishTime - startTime) + " seconds\n\n");
 					tareport.append("No. of CORRECT: " + numCorrect + "\n");
@@ -141,9 +148,8 @@ public class Problem02 extends Applet implements ActionListener {
 					} else { 
 						tamessage.setText("Don't give up. Keep trying.\n");
 					}
-				} else if  (numQuestions >= questionNumber) {								
+				} else if  (numQuestions >= questionNumber) {	// print another question
 					questionNumber++;	
-					// need to display a new question.. the fact that this draws at the end is annoying.
 					x = (int) (Math.random()*10); y = (int) (Math.random()*10); z = 0;
 					lmathProb.setText(x + " + " + y + " = ?");
 					lquestionNo.setText("Question No. " + questionNumber);

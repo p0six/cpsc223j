@@ -49,10 +49,10 @@ public class Problem04 extends Applet implements ActionListener, AdjustmentListe
 		// Defaults
 		setLayout(null);
 		setSize(600,400);
-		
 		resizeValue = sb1.getValue();
+		familyPhoto = new ImageIcon(getClass().getResource(stphoto[0])).getImage();
 		
-		// x, y, width, height
+		// setBounds(x, y, width, height)
 		bleft.setBounds(10, 20, 40, 20); add(bleft);
 		bright.setBounds(110, 20, 40, 20); add(bright);
 		sb1.setBounds(10, 50, 140, 20); add(sb1);
@@ -61,29 +61,25 @@ public class Problem04 extends Applet implements ActionListener, AdjustmentListe
 		limageDesc.setBounds(400, 60, 140, 20); add(limageDesc);
 		taimageDesc.setBounds(400, 90, 190, 100); add(taimageDesc);
 		
+		// listeners
 		bleft.addActionListener(this);
 		bright.addActionListener(this);
 		bshowDesc.addActionListener(this);
 		sb1.addAdjustmentListener(this);
-		
-		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("com//mike//cpsc223j//project12//" + stphoto[0]));
-		familyPhoto = icon.getImage();
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == bleft) {
 			if (imageIndex > 0) {
 				imageIndex--;
-				ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("com//mike//cpsc223j//project12//" + stphoto[imageIndex]));
-				familyPhoto = icon.getImage();
+				familyPhoto = new ImageIcon(getClass().getResource(stphoto[imageIndex])).getImage();
 				repaint();
 				taimageDesc.setText("");
 			}
 		} else if (e.getSource() == bright) {
 			if ((imageIndex+1) < stphoto.length) {
 				imageIndex++;
-				ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("com//mike//cpsc223j//project12//" + stphoto[imageIndex]));
-				familyPhoto = icon.getImage();
+				familyPhoto = new ImageIcon(getClass().getResource(stphoto[imageIndex])).getImage();
 				repaint();
 				taimageDesc.setText("");
 			}
