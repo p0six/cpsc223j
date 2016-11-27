@@ -29,36 +29,31 @@ public class Problem03 extends Applet implements ActionListener {
 	int min = c.get(Calendar.MINUTE);
 	int sec = c.get(Calendar.SECOND);
 	
-	String[] stimezones = {"Pacific", "Mountain", "Central", "Eastern" };
-	String[] smaps = {"pst.png", "mst.png", "cst.png", "est.png"};
-	String[] stzicon = {"tupac.png", "boomhauer.png","kanye.png","biggie.png"};
+	String[] stimezones = {"Pacific", "Mountain", "Central", "Eastern" },
+			smaps = {"pst.png", "mst.png", "cst.png", "est.png"},
+			stzicon = {"tupac.png", "boomhauer.png","kanye.png","biggie.png"};
 	
 	Label lwelcome = new Label("Welcome to the United States of America"),
 			lsampleImage = new Label("A sample image representing"),
-			ltimezoneOne = new Label(""),
+			ltimezoneOne = new Label(stimezones[0] + " Zone"),
 			ltimezone = new Label("Select time zone"),
-			lcurrentTimeZone = new Label("");
+			lcurrentTimeZone = new Label(stimezones[0] + " Time");
 		
 	Choice ctimeZone = new Choice();
 	
 	Button bshowInfo = new Button("Show Info");
 	
-	TextField tftime = new TextField(null,15);
+	TextField tftime = new TextField(hour + ":" + min + ":" + sec,15);
 
-	Image itz, itzicon;
+	Image itz = new ImageIcon(getClass().getResource(smaps[0])).getImage(),
+			itzicon = new ImageIcon(getClass().getResource(stzicon[0])).getImage();
 
 	public void init() {
 		// some defaults
-		this.setLayout(null);
-		this.setSize(600, 400);
-		lcurrentTimeZone.setText(stimezones[ctimeZone.getSelectedIndex()] + " Time");
-		ltimezoneOne.setText(stimezones[ctimeZone.getSelectedIndex()] + " Zone");
-		itz = new ImageIcon(getClass().getResource(smaps[ctimeZone.getSelectedIndex()])).getImage();
-		itzicon = new ImageIcon(getClass().getResource(stzicon[ctimeZone.getSelectedIndex()])).getImage();
-		tftime.setText(hour + ":" + min + ":" + sec);
-		repaint();
+		setLayout(null);
+		setSize(600, 400);
 		
-		// populating list
+		// populate our list of timezones
 		for (int i = 0; i < stimezones.length; i++) {
 			ctimeZone.add(stimezones[i]);	
 		}
@@ -72,22 +67,23 @@ public class Problem03 extends Applet implements ActionListener {
 		lcurrentTimeZone.setBounds(20, 120, 140, 20); add(lcurrentTimeZone);
 		tftime.setBounds(20, 150, 140, 20); add(tftime);
 		bshowInfo.setBounds(20,180, 140, 20); add(bshowInfo);
-
+		
 		// listeners
 		bshowInfo.addActionListener(this);
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == bshowInfo) {
-			Calendar c = Calendar.getInstance();
-			int hour = c.get(Calendar.HOUR);
-			int min = c.get(Calendar.MINUTE);
-			int sec = c.get(Calendar.SECOND);
-						
-			tftime.setText((hour+ctimeZone.getSelectedIndex()) + ":" + min + ":" + sec);
+			// grab a new calendar instance and update the time
+			c = Calendar.getInstance();
+			int hour = c.get(Calendar.HOUR), min = c.get(Calendar.MINUTE), sec = c.get(Calendar.SECOND);
+				
+			// update labels and text-fields based on selected time-zone
+			tftime.setText((hour + ctimeZone.getSelectedIndex()) + ":" + min + ":" + sec);
 			lcurrentTimeZone.setText(stimezones[ctimeZone.getSelectedIndex()] + " Time");
 			ltimezoneOne.setText(stimezones[ctimeZone.getSelectedIndex()] + " Zone");
 			
+			// update images based on selected time-zone
 			itz = new ImageIcon(getClass().getResource(smaps[ctimeZone.getSelectedIndex()])).getImage();
 			itzicon = new ImageIcon(getClass().getResource(stzicon[ctimeZone.getSelectedIndex()])).getImage();
 			repaint();
