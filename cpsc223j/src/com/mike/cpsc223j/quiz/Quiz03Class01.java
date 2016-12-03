@@ -6,7 +6,7 @@ import java.awt.Graphics;
 
 import javax.swing.JFrame;
 
-public class QuizFour {
+public class Quiz03Class01 {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Some drawing");
 		frame.setSize(500,500); // 1st argument = width, 2nd = height

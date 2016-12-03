@@ -9,16 +9,16 @@ import java.util.Scanner;
  * 
  * Purpose:		Instantiate objects using different constructors, call methods.
  */
-public class ClassOne {
+public class Quiz02Class01 {
 
 	public static void main(String[] args) {
-		ClassTwo x = new ClassTwo(); // x is set to 10
+		Quiz02Class02 x = new Quiz02Class02(); // x is set to 10
 		Scanner s = new Scanner(System.in);
 		System.out.print("Enter the values of y and z: ");
 		int i = s.nextInt();
 		int j = s.nextInt();
 		s.nextLine();
-		ClassTwo yz = new ClassTwo(i,j);
+		Quiz02Class02 yz = new Quiz02Class02(i,j);
 		
 		yz.displayXYZ(x.getX(), yz.getY(), yz.getZ());
 		yz.total(x.getX(), yz.getY(), yz.getZ());

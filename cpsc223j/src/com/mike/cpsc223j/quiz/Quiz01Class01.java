@@ -8,7 +8,7 @@ import java.util.*;
  * 
  * Purpose:		Manipulate strings, flow control
  */
-public class QuizOne {
+public class Quiz01Class01 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		boolean continueLoop = true;

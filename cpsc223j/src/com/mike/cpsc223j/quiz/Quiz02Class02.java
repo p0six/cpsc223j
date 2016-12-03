@@ -7,12 +7,12 @@ package com.mike.cpsc223j.quiz;
  * 
  * Purpose:		Instantiate objects using different constructors, call methods.
  */
-public class ClassTwo {
+public class Quiz02Class02 {
 	int x,y,z;
-	public ClassTwo() {
+	public Quiz02Class02() {
 		x = 10;
 	}
-	public ClassTwo(int i, int j) {
+	public Quiz02Class02(int i, int j) {
 		y = i;
 		z = j;
 	}
