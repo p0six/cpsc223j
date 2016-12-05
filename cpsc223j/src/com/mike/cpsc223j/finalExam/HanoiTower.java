@@ -75,13 +75,13 @@ public class HanoiTower extends Applet implements ActionListener {
 			paint(graphics); // paint after filling tower
 
 			// show the tower before calling our towerOfHanoi function
-			showTowerInLog(hanoiTower, numDisks);
+			//showTowerInLog(hanoiTower, numDisks);
 			
 			// do some work, bitch
 			towerOfHanoi(numDisks, 0, 2, 1); //  numDisks, source, destination, intermediate
 			
 			// show the tower after calling our towerOfHanoi function
-			showTowerInLog(hanoiTower, numDisks);
+			//showTowerInLog(hanoiTower, numDisks);
 		}
 	}
 	
